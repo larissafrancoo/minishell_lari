@@ -8,39 +8,52 @@ RM		=	rm -f
 
 LIBRARY	=	./libft/
 
-SRCS	=	./src/builtins/cmd_builtin/cd.c\
-			./src/builtins/cmd_builtin/echo.c\
-			./src/builtins/cmd_builtin/env.c\
-			./src/builtins/cmd_builtin/exit.c\
-			./src/builtins/cmd_builtin/export.c\
-			./src/builtins/ft_builtin.c\
-			./src/builtins/cmd_builtin/pwd.c\
-			./src/builtins/cmd_builtin/unset.c\
-			./src/env/utils_env_1.c\
-			./src/env/utils_env_2.c\
-			./src/env/utils_env_3.c\
-			./src/executer/ft_executer.c\
-			./src/executer/utils_exec.c\
+SRCS	=	./src/builtins/ft_cd.c\
+			./src/builtins/ft_echo.c\
+			./src/builtins/ft_env.c\
+			./src/builtins/ft_exit.c\
+			./src/builtins/ft_export.c\
+			./src/builtins/ft_builtins.c\
+			./src/builtins/ft_pwd.c\
+			./src/builtins/ft_unset.c\
+			./src/cleanup/cleanup_cmd.c\
+			./src/cleanup/cleanup_env.c\
+			./src/cleanup/cleanup_fd.c\
+			./src/cleanup/cleanup_shell.c\
+			./src/utils/ft_alloc_utils.c\
+			./src/utils/ft_cmd_utils.c\
+			./src/utils/ft_env_utils.c\
+			./src/utils/ft_pid_utils.c\
+			./src/utils/ft_free_utils.c\
+			./src/env/ft_utils_env_1.c\
+			./src/env/ft_utils_env.c\
+			./src/env/ft_find_env.c\
+			./src/env/ft_init_env.c\
+			./src/executor/ft_executer.c\
+			./src/executor/ft_executor_utils_1.c\
+			./src/executor/ft_executor_utils.c\
+			./src/executor/ft_get_path_name.c\
 			./src/expansion/ft_expansion.c\
-			./src/expansion/utils_expansion/utils_expan_1.c\
-			./src/expansion/utils_expansion/utils_expan_2.c\
-			./src/expansion/utils_expansion/utils_expan_3.c\
-			./src/lexer/ft_check_lexer.c\
-			./src/lexer/lexer.c\
+			./src/expansion/ft_expan_two_quote.c\
+			./src/expansion/ft_expan_env.c\
+			./src/expansion/ft_expan_one_quote.c\
+			./src/expansion/ft_expan_txt.c\
+			./src/expansion/ft_merge.c\
+			./src/lexer/ft_lexer.c\
 			./src/main/main.c\
-			./src/main/utils_main_1.c\
-			./src/main/utils_main_2.c\
-			./src/main/utils_main_3.c\
-			./src/main/utils_main_4.c\
+			./src/main/ft_check_space.c\
+			./src/main/ft_error_utils.c\
+			./src/main/ft_set_prompt.c\
+			./src/main/ft_start_shell.c\
 			./src/parser/ft_parser.c\
-			./src/parser/utils_parser_1.c\
-			./src/parser/utils_parser_2.c\
-			./src/utils/utils_1.c\
-			./src/utils/utils_2.c\
-			./src/utils/utils_3.c\
-			./src/utils/utils_split_pipe_1.c\
-			./src/utils/utils_split_pipe_2.c\
-
+			./src/parser/ft_heredoc.c\
+			./src/parser/ft_process_cmd.c\
+			./src/parser/ft_prompt_split.c\
+			./src/parser/ft_config_redir.c\
+			./src/parser/ft_find_quote.c\
+			./src/signals/ft_signal_handler.c\
+			./src/signals/ft_signal.c\
+		
 all: $(NAME)
 
 libft:
@@ -54,9 +67,6 @@ run: re
 
 val: re
 	valgrind --leak-check=full --show-leak-kinds=all --suppressions=supressions.supp --track-fds=yes ./$(NAME)
-
-gdb: re
-	gdb ./$(NAME)
 
 norm:
 	@-norminette -R CheckForbiddenSourceHeader

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: penascim <penascim@student.42.rio>         +#+  +:+       +#+        */
+/*   By: emorshhe <emorshhe@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 18:12:43 by penascim          #+#    #+#             */
-/*   Updated: 2023/11/15 18:12:49 by penascim         ###   ########.fr       */
+/*   Created: 2025/02/19 22:38:44 by emorshhe          #+#    #+#             */
+/*   Updated: 2025/02/19 22:38:53 by emorshhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int a)
 {

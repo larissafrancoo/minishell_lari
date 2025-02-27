@@ -3,40 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: penascim <penascim@student.42.rio>         +#+  +:+       +#+        */
+/*   By: emorshhe <emorshhe@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 17:36:52 by penascim          #+#    #+#             */
-/*   Updated: 2024/04/08 19:55:57 by penascim         ###   ########.fr       */
+/*   Created: 2025/02/19 22:54:56 by emorshhe          #+#    #+#             */
+/*   Updated: 2025/02/19 22:55:00 by emorshhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// long	ft_atoi(const char *ptr)
-// {
-// 	long	result;
-// 	int		signal;
+#include "libft.h"
 
-// 	result = 0;
-// 	signal = 1;
-// 	while ((*ptr == 32) || (*ptr >= 9 && *ptr <= 13))
-// 		ptr++;
-// 	if (*ptr == '-' || *ptr == '+')
-// 	{
-// 		if (*ptr == '-')
-// 			signal = -1;
-// 		ptr++;
-// 	}
-// 	while (*ptr >= '0' && *ptr <= '9')
-// 	{
-// 		result *= 10;
-// 		result += *ptr++ - '0';
-// 	}
-// 	return ((long)(result * signal));
-// }
-/*
-#include <stdio.h>
-
-int	main(void)
+int	ft_atoi(const char *nptr)
 {
-	printf("%ld", ft_atoi("2147483649"));
+	int	i;
+	int	number;
+	int	sig;
+
+	i = 0;
+	number = 0;
+	sig = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13)
+		|| nptr[i] == 32)
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sig = -1;
+		i++;
+	}
+	while (nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		number = number * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (number * sig);
 }
-*/
